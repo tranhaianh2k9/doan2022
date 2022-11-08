@@ -1,0 +1,44 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Source+Sans+Pro:ital,wght@1,600&family=Work+Sans:wght@100;200&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.main{
+    display: flex;
+    justify-content: space-around;
+}
+.table-form-loai{
+    width: 60%;
+}
+.form-add-form-loai{
+    background-color: rgb(177, 198, 189);
+    margin-top: 10px;
+    border-radius: 40px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 300px;
+}
+.span-input-form-loai{
+    font-family: Roboto Condensed ;
+    font-weight: 600;
+}
+.input-text-add-form-loai{
+    border-radius: 9px;
+    border: none;
+    border: 1px solid black;
+    width: 250px;
+    height: 40px;
+    padding: 5px;
+}
+.header-Them-form-loai{
+    font-family: Roboto Condensed ;
+    font-weight: 600;
+}
+.button-thoat-form-loai{
+    margin-left: 30px;
+}

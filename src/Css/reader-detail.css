@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.main-reader-detail{
+    background-color: rgb(149, 190, 171);
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+    font-family: Roboto Condensed ;
+    border-radius: 40px;
+}
+.header-reader-detail{
+    text-align: center;
+    padding-top: 16px;
+    font-weight: 900;
+    font-size: 30px;
+}
+.info-reader-detail{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: large;
+}
+.info-left-reader{
+   margin-left: 100px;
+}
+.button-reader-detail{
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+    margin-left: 37%;
+    padding-bottom: 20px;
+}

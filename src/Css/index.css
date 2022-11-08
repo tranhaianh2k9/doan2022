@@ -1,0 +1,328 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Source+Sans+Pro:ital,wght@1,600&family=Work+Sans:wght@100;200&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.main-index{
+    display: flex;
+}
+
+.title-header , .name-login{
+    font-family: Roboto Condensed ;
+    font-weight: 900;
+    font-size: 20px;
+    color: rgb(252, 254, 255);
+    text-decoration: none
+}
+.title-header, .name-login {
+    margin-top: 20px;
+}
+
+
+.tag-bar{
+    display: flex;
+    margin-top: 3px;
+   
+}
+.li-tagbar{
+    background-color: rgb(16, 58, 78);
+    width: 24%;
+    margin-left: 13px;
+    text-align: center;
+    font-size: large;
+    cursor: pointer;
+    
+}
+
+.li-tagbar:hover {
+    background-color: rgb(207, 223, 230);
+}
+
+li{
+    list-style: none;
+}
+.link-tagbar{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: Roboto Condensed;
+    font-weight: 600;
+    
+}
+.header-index{
+    display: flex ;
+    justify-content: space-evenly;
+    background-color: rgb(16, 58, 78);
+    height: 80px;
+    width: 100%;
+   
+}
+body{
+    background-color: rgb(235, 231, 225);
+}
+
+/* maine css */
+.search-form{
+        margin-top: 9px;
+        background-color: rgb(197, 212, 207);
+        height: 100px;
+        display: flex;
+        justify-content: space-around;
+}
+.search-span{
+   margin-top: 16px;
+   font-family: Roboto Condensed;
+   font-size: 20px;
+   font-weight:600;
+   color: black;
+
+}
+.input-search{
+    border-radius: 5px;
+    margin-left: 23px;
+    width: 300px;
+    padding-left: 5px;
+}
+.fa-eye{
+    margin-top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.list-directory{
+    margin-top: 2px;
+    width: 10%;
+    margin-left: 3%;
+}
+
+
+ .li-directory{
+    font-family: Roboto Condensed ;
+    font-weight: 900;
+    font-size: 20px;
+    color: aliceblue;
+    list-style: none;
+    padding-top: 9px ;
+    padding-bottom: 9px;
+    border: 1px solid white;
+    padding-left: 20px;
+    background-color: rgb(28, 112, 152);
+    box-shadow: 3px 6px #b4a8a8;
+}
+.li-directory a{
+    text-decoration: none;
+    font-family: Roboto Condensed ;
+    font-weight: 900;
+    font-size: 20px;
+    color: aliceblue;
+}
+.se:hover{
+    background-color: rgb(120, 197, 201);
+}
+
+.btn-edit{
+    margin-right: 5px;
+}
+.dropdown-list{
+    position: relative;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+.first{
+    background-color: rgb(16, 58, 78);
+}
+.main{
+    width: 100%;
+}
+.table{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+.main-book{
+    width: 100%;
+    margin-left: 50px;
+    margin-top: 20px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.element{
+    width: 15%;
+    height: 300px;
+    background-color: rgb(197, 232, 202);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+    border-radius: 5%;
+ 
+}
+.img-element{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+.element:hover{
+    background-color: rgb(138, 220, 150);
+    transition: all 0.5s ease-in-out;
+    box-shadow: 5px 10px #625d5d;
+}
+.element:hover .img-element{
+    width: 230px;
+    height: 230px;
+    transition: all 0.5s ;
+}
+
+.name-element {
+    font-family:  sans-serif;
+    font-weight: 600;
+    color : rgb(51, 109, 25);
+}
+.remains-element{
+    font-family:  sans-serif;
+    font-weight: 600;
+    color : rgb(51, 109, 25);
+}
+.name-element {
+    margin-left: 10px;
+}
+.button-thoat{
+    width: 100px;
+}
+.button-themmoi{
+    margin-top: 15px;
+    height: 40px;
+    background-color: rgb(143, 198, 121) ;
+    border : 1px solid rgb(123, 209, 126);
+    border-radius: 5px;
+    width: 90px;
+    
+}
+
+.header-Them{
+    font-family: Roboto Condensed ;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 20px;
+
+}
+.form-add{
+    background-color: rgb(177, 198, 189);
+    margin-top: 10px;
+    border-radius: 40px;
+    width: 80%;
+    height: 400px;
+    margin-left: 10%;
+}
+.input-right{
+    width: 38%;
+   height: 240px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+}
+
+.input-left{
+   width: 38%;
+   height: 240px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+}
+.input-data{
+    display: flex;
+    justify-content: space-around;
+}
+.input-text-add{
+    border-radius: 9px;
+    border: none;
+    border: 1px solid black;
+    width: 350px;
+    height: 40px;
+    padding-left: 4px;
+   
+}
+.span-input{
+    font-family: Roboto Condensed ;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-them{
+    width: 100px;
+    margin-left: 20px;
+}
+.button-sua{
+    width: 100px;
+    margin-left: 40px;
+}
+.link-index{
+    text-decoration: none;
+}
+
+.button-formadd{
+    text-align: center;
+}
+/* footer css */
+footer{
+    margin-top: 150px;
+    background-color: rgb(16, 58, 78);
+    height: 250px;
+}
+.container-footer{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.about{
+    margin-top: 20px;
+}
+
+.social-icon{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.about h2 {
+    font-family: Roboto Condensed ;
+    font-weight: 900;
+    font-size: 30px;
+    color: aliceblue;
+}
+
+.contact{
+    font-family: Roboto Condensed ;
+    font-weight: 900;
+    font-size: 20px;
+    color: aliceblue;
+    margin-top: 25px;
+}
+
+.info{
+    display: flex;
+    margin-top: 25px;
+    justify-content: space-around;
+    width: 700px;
+}
+
+.link-info{
+    color: aliceblue;
+}
+.fa-brands{
+    color:white;
+    font-size: 25px;
+}

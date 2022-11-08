@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.background-detail{
+    background-color: aliceblue;
+    height:850px;
+    position:relative
+}
+.form-detail{
+    background-color: rgb(220, 241, 240);
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 60px;
+    display: flex;
+    position:absolute;
+    top: 100px;
+}   
+
+.img-book{
+    border-radius: 40px;
+    width:  50%;
+    
+}
+
+
+.info-book{
+    margin-right: 10px;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 47%;
+}
+
+h2{
+    margin-bottom: 20px;
+}
+
+p{
+    font-weight: 900;
+    margin-bottom: 24px;
+}
+
+.btn-delete{
+    position: absolute;
+    top: 500px;
+    left: 600px
+}
+.btn-muon{
+    position: absolute;
+    top: 500px;
+    left: 800px
+}

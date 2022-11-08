@@ -1,0 +1,68 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Source+Sans+Pro:ital,wght@1,600&family=Work+Sans:wght@100;200&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.table-form-docgia{
+    width: 98%;
+}
+.form-add-form-docgia{
+    background-color: rgb(177, 198, 189);
+    margin-top: 10px;
+    border-radius: 40px;
+    width: 80%;
+    height: 400px;
+    margin-left: 10%;
+}
+.span-input-form-docgia{
+    font-family: Roboto Condensed ;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+.input-text-add-form-docgia{
+    border-radius: 9px;
+    border: none;
+    border: 1px solid black;
+    width: 250px;
+    height: 40px;
+    padding: 5px;
+}
+.header-Them-form-docgia{
+    font-family: Roboto Condensed ;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+.input-right-form-docgia{
+     width: 30%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.input-left-form-docgia{
+    width: 30%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.inputdata-form-docgia{
+    display: flex;
+    justify-content: space-around;
+}
+
+.button-formadd-formdocgia{
+    text-align: center;
+}
+.button-them-form-docgia, .button-sua-form-docgia{
+    margin-left: 40px;
+}

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.form-add-form-qlmuontra{
+    width: 80%;
+    height: 500px;
+    background-color: rgb(177, 198, 189);
+    
+    margin-left: 10%;
+    margin-top: 10px;
+    border-radius: 40px;
+
+}
+.header-qlmuontra{
+     font-family: Roboto Condensed ;
+     text-align: center;
+     font-weight: 900;
+     padding-top: 10px;
+}
+.span-input-form-qlmuontra{
+    font-family: Roboto Condensed ;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+.input-text-add-form-qlmuontra{
+    border-radius: 9px;
+    border: none;
+    border: 1px solid black;
+    width: 250px;
+    height: 40px;
+    padding: 5px;
+}
+
+.input-right-form-qlmuontra{
+    width: 30%;
+   height: 300px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+}
+
+.input-left-form-qlmuontra{
+   width: 30%;
+   height: 300px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+}
+
+.inputdata-form-qlmuontra{
+   display: flex;
+   justify-content: space-around;
+}
+
+.img-sach-da-chon{
+    width: 110px ;
+    margin: top 10px; 
+    margin-left: 20px;
+    border-radius: 12px;
+}
+.span-hinhanh{
+    font-family: Roboto Condensed ;
+    font-weight: 600;
+}
+.text-area-input{
+    width: 50%;
+    border-radius: 30px;
+    height: 40px;
+    padding: 10px;
+}
+.area-input{
+    font-family: Roboto Condensed ;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-evenly;
+}
+.button-form-qlmuontra{
+    text-align: center;
+    margin-top: 20px;
+}
+.button-them-ql{
+    margin-left: 20px;
+}
+.table-form-qlmuon{
+    width: 60%;
+    margin-left: 20%;
+}

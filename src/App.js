@@ -9,14 +9,17 @@ import Quanlyloai from './Page/Quanlyloai';
 import Quanlydocgia from './Page/Quanlydocgia';
 import Chitietdocgia from './Page/Chitietdocgia';
 import Quanlymuontra from './Page/Quanlymuontra';
+import Chitietmuontra from './Page/Chitietmuontra';
+import Dangky from './Page/Dangky';
+import Dangnhap from './Page/Dangnhap';
+import Index from './Page/Index';
 const App = () => {
   return (
     <div>
+
       <Header></Header>
-     
       <Routes>
-      
-      <Route path="/" element={<Quanlysach />}></Route>
+      <Route path="/quanlysach" element={<Quanlysach />}></Route>
       <Route path = "/detail" element={<Chitiet/>}>
         <Route path=":id" element={<Chitiet />}></Route>
       </Route>
@@ -28,7 +31,12 @@ const App = () => {
       <Route path="/quanlymuontra" element={<Quanlymuontra />}>
         <Route path=":iddocgia" element={<Quanlymuontra />}></Route>
       </Route>
-     
+      <Route path="/chitietdonmuon" element={<Chitietmuontra />}>
+        <Route path=":iddonmuon" element={<Chitietmuontra />}></Route>
+      </Route>
+      <Route path='/dangky' element={<Dangky></Dangky>}></Route>
+      <Route path='/dangnhap' element={<Dangnhap></Dangnhap>}></Route>
+      <Route path='/' element={<Index></Index>}></Route>
       </Routes>
      
 

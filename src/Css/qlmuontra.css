@@ -83,5 +83,55 @@
 }
 .table-form-qlmuon{
     width: 60%;
-    margin-left: 20%;
+    margin-left: 2%;
+}
+.button-chitiet-muontra{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+   margin-left: 15%;
+   margin-bottom: 20px;
+
+}
+.info-button-trasach{
+    margin-left: 20px;
+}
+.main-docgia{
+    display: flex;
+}
+.form-quanly-docgia{
+    margin-left: 7%;
+    margin-right: 3%;
+    margin-top: 10px;
+    width: 10%;
+  
+}
+.item-quanly-docgia{
+    margin-bottom: 30px;
+    width: 100%;
+    background-color:  rgb(177, 198, 189);
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.green {
+    background-color: rgb(53, 130, 53);
+}
+.green:hover{
+    background-color: rgb(129, 193, 129);
+}
+.red{
+    background-color: rgb(212, 62, 62);
+}
+.red:hover{
+    background-color: rgb(231, 101, 101);
+}
+.gray{
+    background-color: rgb(140, 129, 129);
+}
+.gray:hover{
+    background-color: rgb(194, 184, 184);
+}
+.tong:hover{
+    background-color: rgb(208, 235, 223);
 }

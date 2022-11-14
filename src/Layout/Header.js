@@ -15,7 +15,7 @@ const Header = () => {
                 <span className="name-login"><i className="fa-sharp fa-solid fa-user" /><span> Admin</span></span>
             </header>
             <div className="tag-bar">
-                <li  className="li-tagbar"> <Link  to="/" className='link-tagbar' > Quản Lý Sách </Link>
+                <li  className="li-tagbar"> <Link  to="/quanlysach" className='link-tagbar' > Quản Lý Sách </Link>
                 </li>
                 <li className="li-tagbar"> <Link  to ="/category" className='link-tagbar'> Loại Sách </Link>
                 </li>

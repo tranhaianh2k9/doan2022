@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.form-chi-tiet-don-muon{
+    width: 70%;
+  
+    background-color: rgb(149, 190, 171);
+    border-radius: 40px;
+    border: 1px solid rgb(9, 59, 31);
+    margin-top: 10px;
+    margin-left: 15%;
+}
+.header-chitiet-donmuon{
+    text-align: center;
+    font-family: Roboto Condensed ;
+    font-weight: 900;
+    font-size: 40px;
+    color: rgb(27, 28, 29);
+}
+.span-info-chitietmuontra{
+    font-family: Roboto Condensed ;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    width: 210px;
+}
+.info-donmuon{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: large;
+    
+}
+.list-img-chitietmuontra{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.info-img{
+    font-family: Roboto Condensed ;
+}
+.img-chitietmuontra{
+    width: 240px;
+    border-radius: 12px;
+}
+.name-img{
+    font-weight: 900;
+    font-size: large;
+    
+}
+.button-chitietmuontra{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.span-ghichu-chitietmuontra{
+    font-family: Roboto Condensed ;
+    font-weight: 600;
+    display: flex;
+   
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+    font-size: large;
+}
+.tranghthai{
+    width: 200px;
+}
+.button-right{
+    margin-left: 20px;
+}
+
+.form-chi-tiet-don-tra{
+    width: 50%;
+  
+    background-color: rgb(149, 190, 171);
+    border-radius: 40px;
+    border: 1px solid rgb(9, 59, 31);
+    margin-top: 10px;
+    margin-left: 25%;
+}
+.danh-sach-sach-tra{
+   
+}
+.ten-sach-tra{
+    
+}
+.span-sach-tra{
+    margin-left: 40px;
+    display: flex;
+    font-family: Roboto Condensed ;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: 22px;
+}
+.tinh-trang-sach-tra{
+    margin-left: 20px;
+    border: none;
+    border: 1px solid black;
+    width: 220px;
+    height: 35px;
+    border-radius: 10px;
+    padding-left: 14px;
+
+}
+.main-chitiet-dontra{
+    display: flex;
+}
+.tong-tien{
+    font-family: Roboto Condensed ;
+    font-weight: 600;
+    display: flex;
+    margin-top: 100px;
+    margin-left: 70px;
+    font-size: 25px;
+}
+.tienphat-trai{
+    margin-left: 20px;
+}
+.span-info-tinhtrang{
+    font-family: Roboto Condensed ;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-top: 20px;
+    font-size: 20px;
+}

@@ -70,10 +70,8 @@ const Chitietdocgia = () => {
                 </div>
                 <div className='button-reader-detail'>
                     <Button className='' color='danger' onClick={() => handleDeleteClick(reader.iddocgia)} >Xóa</Button>
-                    <Button className='' color='info'>Lịch Sử</Button>
                     {reader.trangthai == "chưa có đơn mượn" ? (  <Button className='' color='success' onClick={() => handleTaodonClick(reader.iddocgia)}>Tạo Đơn Mượn</Button>) : ("")
                     }
-
                 </div>
             </div>
         </div>

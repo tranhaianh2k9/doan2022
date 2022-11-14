@@ -7,7 +7,12 @@
 }
 
 
-
+.p-tongsach{
+    font-family: Roboto Condensed ;
+    font-weight: 900;
+    font-size: 20px;
+   
+}
 .main-index{
     display: flex;
 }

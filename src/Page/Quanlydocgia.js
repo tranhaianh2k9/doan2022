@@ -14,7 +14,7 @@ const Quanlydocgia = () => {
     const [datainputdiachi, setDataInputDiachi] = useState('')
     const [datainputsdt, setDataInputSdt] = useState('')
     const [datainputcccd, setDataInputCccd] = useState('')
-    const [datainputemail, setDataInputEmail]   = useState('')
+    const [datainputemail, setDataInputEmail] = useState('')
 
     const navigate = useNavigate()
 
@@ -23,6 +23,10 @@ const Quanlydocgia = () => {
     const [add, setAdd] = useState(false)
     const [search, setSearch] = useState()
     const [listDocgia, setListDocgia] = useState([])
+    const [firstListreader, setFirstListReader] = useState([])
+    const [dangmuon,setDangmuon]  =useState([])
+    const [trehen,setTrehen]  =useState([])
+    const [chuaco,setChuaco]  =useState([])
 
     useEffect(() => {
         if (search == null) {
@@ -30,7 +34,14 @@ const Quanlydocgia = () => {
                 .get(`https://6361bcc9fabb6460d8fe204f.mockapi.io/docgia`)
                 .then((res) => {
                     const data = res.data;
+                    
                     setListDocgia(data);
+                    setFirstListReader(data)
+
+                   setDangmuon( data.filter((item) => item.trangthai == "Đang Mượn")) 
+                   setTrehen( data.filter((item) => item.trangthai == "Trễ Hạn")) 
+                   setChuaco( data.filter((item) => item.trangthai == "chưa có đơn mượn")) 
+                 
                 });
 
         } else {
@@ -52,12 +63,10 @@ const Quanlydocgia = () => {
         setDataInputSdt("")
         setDataInputNgaysinh("")
     }
-    function ValidateEmail(mail) 
-    {
-     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
-      {
-        return (true)
-      }
+    function ValidateEmail(mail) {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+            return (true)
+        }
         return (false)
     }
 
@@ -81,104 +90,110 @@ const Quanlydocgia = () => {
     }
 
     const handleThem = () => {
-            if  (datainputten === "" || datainputngaysinh === "" || datainputemail==="" || datainputdiachi===""|| datainputsdt===""|| datainputcccd===""){
-                swal("Oops!", "Không được để trống!", "error")
-            }else if(datainputcccd < 1 || datainputsdt < 1){
-                swal("Oops!", "Không được nhập số nhỏ hơn 0!", "error")
-            }else if (!ValidateEmail(datainputemail)){
-                swal("Oops!", "Không đúng định dạng Email!", "error")
-            }else if (datainputsdt.length !== 10){
-                swal("Oops!", "Không đúng định dạng số điện thoại!", "error")
+        if (datainputten === "" || datainputngaysinh === "" || datainputemail === "" || datainputdiachi === "" || datainputsdt === "" || datainputcccd === "") {
+            swal("Oops!", "Không được để trống!", "error")
+        } else if (datainputcccd < 1 || datainputsdt < 1) {
+            swal("Oops!", "Không được nhập số nhỏ hơn 0!", "error")
+        } else if (!ValidateEmail(datainputemail)) {
+            swal("Oops!", "Không đúng định dạng Email!", "error")
+        } else if (datainputsdt.length !== 10) {
+            swal("Oops!", "Không đúng định dạng số điện thoại!", "error")
+        }
+        else {
+            const newdocgia = {
+                ten: datainputten,
+                ngaysinh: datainputngaysinh,
+                diachi: datainputdiachi,
+                sodienthoai: datainputsdt,
+                cccd: datainputcccd,
+                email: datainputemail,
+                trangthai: 'chưa có đơn mượn',
             }
-            else{
-                const newdocgia = {
-                    ten : datainputten,
-                    ngaysinh: datainputngaysinh,
-                    diachi: datainputdiachi,
-                    sodienthoai: datainputsdt,
-                    cccd : datainputcccd,
-                    email: datainputemail,
-                    trangthai :'chưa có đơn mượn',
-                   }
 
-           fetch("https://6361bcc9fabb6460d8fe204f.mockapi.io/docgia", {
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
-            method: "POST",
-            body: JSON.stringify(newdocgia),
-          })
+            fetch("https://6361bcc9fabb6460d8fe204f.mockapi.io/docgia", {
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: JSON.stringify(newdocgia),
+            })
                 .then(function (res) {
                     return res.json();
                 })
                 .then(function () {
                     setIsCreate(!isCreated);
                 });
-                swal("Thêm thành công", "    ", "success");
+            swal("Thêm thành công", "    ", "success");
             clearInput()
-            }
+        }
     }
     const handleEditClick = (id) => {
-            setFormName("Edit")
-            setAdd(!add)
-            const loai = [...listDocgia];
-            const index = loai.findIndex((item) => {
-          return item.iddocgia=== id
+        setFormName("Edit")
+        setAdd(!add)
+        const loai = [...listDocgia];
+        const index = loai.findIndex((item) => {
+            return item.iddocgia === id
 
 
         });
-            setDataInputId(loai[index].iddocgia)
-            setDataInputTen(loai[index].ten)
-            setDataInputDiachi(loai[index].diachi)
-            setDataInputEmail(loai[index].email)
-            setDataInputNgaysinh(loai[index].ngaysinh)
-            setDataInputSdt(loai[index].sodienthoai)
-            setDataInputCccd(loai[index].cccd)
+        setDataInputId(loai[index].iddocgia)
+        setDataInputTen(loai[index].ten)
+        setDataInputDiachi(loai[index].diachi)
+        setDataInputEmail(loai[index].email)
+        setDataInputNgaysinh(loai[index].ngaysinh)
+        setDataInputSdt(loai[index].sodienthoai)
+        setDataInputCccd(loai[index].cccd)
     };
 
     const handleEditSave = () => {
 
-        if  (datainputten === "" || datainputngaysinh === "" || datainputemail==="" || datainputdiachi===""|| datainputsdt===""|| datainputcccd===""){
+        if (datainputten === "" || datainputngaysinh === "" || datainputemail === "" || datainputdiachi === "" || datainputsdt === "" || datainputcccd === "") {
             swal("Oops!", "Không được để trống!", "error")
-        }else if(datainputcccd < 1 || datainputsdt < 1){
+        } else if (datainputcccd < 1 || datainputsdt < 1) {
             swal("Oops!", "Không được nhập số nhỏ hơn 0!", "error")
-        }else if (!ValidateEmail(datainputemail)){
+        } else if (!ValidateEmail(datainputemail)) {
             swal("Oops!", "Không đúng định dạng Email!", "error")
-        }else if (datainputsdt.length !== 10){
+        } else if (datainputsdt.length !== 10) {
             swal("Oops!", "Không đúng định dạng số điện thoại!", "error")
         }
-        else{
+        else {
 
-                  fetch("https://6361bcc9fabb6460d8fe204f.mockapi.io/docgia/" + datainputId , {
-                    headers: {
-                      Accept: "application/json",
-                      "Content-Type": "application/json",
-                    },
-                    method: "PUT",
-                    body: JSON.stringify( {   ten : datainputten,
-                        ngaysinh: datainputngaysinh,
-                        diachi: datainputdiachi,
-                        sodienthoai: datainputsdt,
-                        cccd : datainputcccd,
-                        email: datainputemail
-                    }),
-                  })
-                        .then(function (res) {
-                            return res.json();
-                        })
-                        .then(function () {
-                            setIsCreate(!isCreated);
-                        });
+            fetch("https://6361bcc9fabb6460d8fe204f.mockapi.io/docgia/" + datainputId, {
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                method: "PUT",
+                body: JSON.stringify({
+                    ten: datainputten,
+                    ngaysinh: datainputngaysinh,
+                    diachi: datainputdiachi,
+                    sodienthoai: datainputsdt,
+                    cccd: datainputcccd,
+                    email: datainputemail
+                }),
+            })
+                .then(function (res) {
+                    return res.json();
+                })
+                .then(function () {
+                    setIsCreate(!isCreated);
+                });
 
-                        swal("Sửa thành công", "    ", "success");
-                        clearInput()
-                        setAdd(!add)
-                 }
+            swal("Sửa thành công", "    ", "success");
+            clearInput()
+            setAdd(!add)
+        }
     }
 
- 
-
+    const loadSach = (item) => {
+        const listProduct = firstListreader.filter((data) => data.trangthai == item);
+        setListDocgia([...listProduct]);
+    }
+    const loadlaidanhsach = () => {
+        setListDocgia(firstListreader)
+    }
     const handleSearch = (e) => {
         setSearch(e.target.value)
     }
@@ -207,30 +222,44 @@ const Quanlydocgia = () => {
                             <span className='span-input-form-docgia'>  Họ Tên * <input className='input-text-add-form-docgia' type="text" value={datainputten} onChange={inputTensach}></input></span>
                             <span className='span-input-form-docgia'>  Ngày Sinh * <input className='input-text-add-form-docgia' type="date" value={datainputngaysinh} onChange={inputNgaysinh}></input></span>
                             <span className='span-input-form-docgia'> Địa Chỉ * <input className='input-text-add-form-docgia' type="text" value={datainputdiachi} onChange={inputDiachi}></input></span>
-            
+
                         </div>
-                           
+
                         <div className='input-right-form-docgia'>
-                                <span className='span-input-form-docgia'>  CCCD* <input  className='input-text-add-form-docgia' type="number" value={datainputcccd} onChange={inputCccd}></input></span>
-                                <span className='span-input-form-docgia'>  Email * <input className='input-text-add-form-docgia' type="email"   value={datainputemail} onChange={inputEmail}></input></span>
-                                <span className='span-input-form-docgia'>   Số Điện Thoại* <input className='input-text-add-form-docgia' type="number" value={datainputsdt} onChange={inputsdt}></input></span>
-                        
+                            <span className='span-input-form-docgia'>  CCCD* <input className='input-text-add-form-docgia' type="number" value={datainputcccd} onChange={inputCccd}></input></span>
+                            <span className='span-input-form-docgia'>  Email * <input className='input-text-add-form-docgia' type="email" value={datainputemail} onChange={inputEmail}></input></span>
+                            <span className='span-input-form-docgia'>   Số Điện Thoại* <input className='input-text-add-form-docgia' type="number" value={datainputsdt} onChange={inputsdt}></input></span>
+
                         </div>
-                        
+
                     </div>
-                    
+
                     <div className='button-formadd-formdocgia'>
                         <Button color="secondary" className='button-thoat-form-docgia' onClick={handleOpenAdd}> Thoát </Button>
-                    {
-                        formName === "Add New" ? (<Button className='button-them-form-docgia' color="success" onClick={handleThem}>Lưu Mới</Button>
-                        ):(<Button className='button-sua-form-docgia' color="success" onClick={handleEditSave}>Sửa</Button>)
-                     }
+                        {
+                            formName === "Add New" ? (<Button className='button-them-form-docgia' color="success" onClick={handleThem}>Lưu Mới</Button>
+                            ) : (<Button className='button-sua-form-docgia' color="success" onClick={handleEditSave}>Sửa</Button>)
+                        }
                     </div>
                 </div>
-                
+
             ) : ("")
             }
             <div class="main-docgia">
+                <div className='form-quanly-docgia'>
+                    <div className='item-quanly-docgia tong'onClick={loadlaidanhsach} >
+                        <p className='p-item-quanly'>Tổng Số Đọc Giả: {firstListreader.length}</p>
+                    </div>
+                    <div className='item-quanly-docgia green' onClick={()=>loadSach('Đang Mượn')}>
+                        <p className='p-item-quanly'> Đang Mượn: {dangmuon.length}</p>
+                    </div>
+                    <div className='item-quanly-docgia red' onClick={()=>loadSach('Trễ Hạn')}>
+                        <p className='p-item-quanly'>Trễ Hẹn: {trehen.length}</p>
+                    </div>
+                    <div className='item-quanly-docgia gray' onClick={()=>loadSach('chưa có đơn mượn')}>
+                        <p className='p-item-quanly'>chưa có đơn mượn: {chuaco.length}</p>
+                    </div>
+                </div>
                 <table className="table table-success table-bordered table-striped table-form-docgia">
                     <thead>
                         <tr className='tr-table'>
@@ -262,9 +291,9 @@ const Quanlydocgia = () => {
                                             Sửa
                                         </Button>) : ("")
                                         }
-                                         <Link className='link-index' to={`/reader-detail/${item.iddocgia}`}> <Button color="info" >
-                                        Chi Tiết
-                                    </Button> </Link>
+                                        <Link className='link-index' to={`/reader-detail/${item.iddocgia}`}> <Button color="info" >
+                                            Chi Tiết
+                                        </Button> </Link>
                                     </td>
                                 </tr>
                             )

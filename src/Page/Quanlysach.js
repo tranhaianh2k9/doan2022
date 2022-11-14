@@ -17,6 +17,7 @@ const Quanlysach = () => {
     const [datainputNxb, setDataInputNxb] = useState('')
     const [datainputTacgia, setDataInputTacgia] = useState('')
     const [datainputLoaisach, setDataInputLoaisach] = useState('')
+    const [first, setFirst] = useState([])
 
     const navigate = useNavigate()
 
@@ -35,6 +36,7 @@ const Quanlysach = () => {
                 .then((res) => {
                     const data = res.data;
                     setListBooks(data);
+                    setFirst(data)
                 });
 
 
@@ -145,7 +147,7 @@ const Quanlysach = () => {
                 nhaxuatban: datainputNxb,
                 hinhanh: datainputHinhanh,
                 namxuatban: datainputNam,
-                dongia: datainputDongia
+                dongia: parseInt(datainputDongia) 
             }
 
             fetch("https://6361bcc9fabb6460d8fe204f.mockapi.io/sach", {
@@ -214,7 +216,7 @@ const Quanlysach = () => {
                     nhaxxuatban: datainputNxb,
                     hinhanh: datainputHinhanh,
                     namxuatban: datainputNam,
-                    dongia: datainputDongia
+                    dongia: parseInt(datainputDongia) 
                 }),
             })
                 .then(function (res) {
@@ -251,7 +253,7 @@ const Quanlysach = () => {
                 {!add == true ? (<button className='button-themmoi' onClick={handleOpenAdd}> Thêm mới </button>)
                     : ("")}
 
-                <i class="fa-solid fa-eye" onClick={handleView}></i>
+                 <span><i class="fa-solid fa-eye" onClick={handleView}></i> <p className='p-tongsach'>Số Lượng Sách: {first.length}</p></span>
             </div>
             {add == true ? (
                 <div className='form-add'>

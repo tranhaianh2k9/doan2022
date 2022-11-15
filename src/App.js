@@ -13,10 +13,15 @@ import Chitietmuontra from './Page/Chitietmuontra';
 import Dangky from './Page/Dangky';
 import Dangnhap from './Page/Dangnhap';
 import Index from './Page/Index';
+import Quenmk from './Page/Quenmk';
+import Doimk from './Page/Doimk';
+
 const App = () => {
+
+
   return (
     <div>
-
+	
       <Header></Header>
       <Routes>
       <Route path="/quanlysach" element={<Quanlysach />}></Route>
@@ -36,9 +41,11 @@ const App = () => {
       </Route>
       <Route path='/dangky' element={<Dangky></Dangky>}></Route>
       <Route path='/dangnhap' element={<Dangnhap></Dangnhap>}></Route>
+      <Route path='/doimatkhau' element={<Doimk></Doimk>}></Route>
+      <Route path='/quenmatkhau' element={<Quenmk></Quenmk>} ></Route>
       <Route path='/' element={<Index></Index>}></Route>
       </Routes>
-     
+ 
 
     </div>
   )

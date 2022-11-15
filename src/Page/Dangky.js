@@ -17,6 +17,7 @@ const Dangky = () => {
     const [inputPhoneNum, setInputPhoneNum] = useState()
     const [inputCCCD, setInputCCCD] = useState()
     const [listData, setListData] = useState()
+    const [isCreated, setIsCreated] =useState(true)
     
     const navigate = useNavigate()
     useEffect(() => {
@@ -26,7 +27,7 @@ const Dangky = () => {
                     const data = res.data;
                     setListData(data);
                 });
-    }, []);
+    }, [isCreated]);
 
     const handleInputEmail = (e) => {
         setInputEmail(e.target.value)
@@ -89,6 +90,7 @@ const Dangky = () => {
                 email: inputEmail,
                 sdt: inputPhoneNum,
                 cmnd: inputCCCD,
+                phanquyen: "manager",
                 
             }
 
@@ -104,6 +106,7 @@ const Dangky = () => {
                     return res.json();
                 })
                 .then(function () {
+                    setIsCreated(!isCreated)
                 });
             swal("Đăng Ký Thành Công", "  ", "success");
             navigate('/dangnhap')

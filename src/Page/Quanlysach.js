@@ -213,7 +213,7 @@ const Quanlysach = () => {
                     soluong: datainputSoluong,
                     tacgia: datainputTacgia,
                     loaisach: datainputLoaisach,
-                    nhaxxuatban: datainputNxb,
+                    nhaxuatban: datainputNxb,
                     hinhanh: datainputHinhanh,
                     namxuatban: datainputNam,
                     dongia: parseInt(datainputDongia) 
@@ -253,7 +253,7 @@ const Quanlysach = () => {
                 {!add == true ? (<button className='button-themmoi' onClick={handleOpenAdd}> Thêm mới </button>)
                     : ("")}
 
-                 <span><i class="fa-solid fa-eye" onClick={handleView}></i> <p className='p-tongsach'>Số Lượng Sách: {first.length}</p></span>
+                 <span><i class="fa-solid fa-eye" onClick={handleView}></i> <p className='p-tongsach'>Số Đầu Sách: {first.length} </p> </span>
             </div>
             {add == true ? (
                 <div className='form-add'>

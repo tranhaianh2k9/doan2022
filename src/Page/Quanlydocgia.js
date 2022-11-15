@@ -98,6 +98,8 @@ const Quanlydocgia = () => {
             swal("Oops!", "Không đúng định dạng Email!", "error")
         } else if (datainputsdt.length !== 10) {
             swal("Oops!", "Không đúng định dạng số điện thoại!", "error")
+        } else if (datainputcccd.length !== 9) {
+            swal("Oops!", "Không đúng định dạng thẻ sinh viên!", "error")
         }
         else {
             const newdocgia = {
@@ -156,6 +158,8 @@ const Quanlydocgia = () => {
             swal("Oops!", "Không đúng định dạng Email!", "error")
         } else if (datainputsdt.length !== 10) {
             swal("Oops!", "Không đúng định dạng số điện thoại!", "error")
+        } else if (datainputcccd.length !== 9) {
+            swal("Oops!", "Không đúng định dạng thẻ sinh viên!", "error")
         }
         else {
 
@@ -226,7 +230,7 @@ const Quanlydocgia = () => {
                         </div>
 
                         <div className='input-right-form-docgia'>
-                            <span className='span-input-form-docgia'>  CCCD* <input className='input-text-add-form-docgia' type="number" value={datainputcccd} onChange={inputCccd}></input></span>
+                            <span className='span-input-form-docgia'>  Mã Sinh Viên* <input className='input-text-add-form-docgia' type="number" value={datainputcccd} onChange={inputCccd}></input></span>
                             <span className='span-input-form-docgia'>  Email * <input className='input-text-add-form-docgia' type="email" value={datainputemail} onChange={inputEmail}></input></span>
                             <span className='span-input-form-docgia'>   Số Điện Thoại* <input className='input-text-add-form-docgia' type="number" value={datainputsdt} onChange={inputsdt}></input></span>
 
@@ -268,7 +272,7 @@ const Quanlydocgia = () => {
                             <th scope="col">Ngày Sinh</th>
                             <th scope="col">Địa Chỉ</th>
                             <th scope="col">Số Điện Thoại</th>
-                            <th scope="col">CCCD</th>
+                            <th scope="col"> Mã Sinh Viên</th>
                             <th scope="col">Email</th>
                             <th scope="col">Action</th>
                         </tr>

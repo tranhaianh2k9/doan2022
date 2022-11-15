@@ -64,7 +64,7 @@ const Chitietdocgia = () => {
                     <div className='info-right-reader'>
                         <p className='info-detail'>Id: {reader.iddocgia}</p>
                         <p className='info-detail'>Địa chỉ: {reader.diachi}</p>
-                        <p className='info-detail'>CCCD: {reader.cccd}</p>
+                        <p className='info-detail'> Mã Sinh Viên: {reader.cccd}</p>
                         <p className='info-detail'>Trạng Thái: {reader.trangthai}</p>
                     </div>
                 </div>

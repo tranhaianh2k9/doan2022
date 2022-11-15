@@ -5,12 +5,18 @@
   margin: 0;
   padding: 0;
 }
+.dropdow{
+   background-color: rgb(16, 58, 78);
+   border : none;
+   margin-left: 400px;
+}
+
 
 .header-index{
     display: flex ;
     justify-content: space-evenly;
     background-color: rgb(16, 58, 78);
-    height: 80px;
+    height: 20px;
     width: 100%;
    
 }
@@ -22,7 +28,7 @@
 .title-header , .name-login{
     font-family: Roboto Condensed ;
     font-weight: 900;
-    font-size: 20px;
+    font-size: 40px;
     color: rgb(252, 254, 255);
     text-decoration: none
 }

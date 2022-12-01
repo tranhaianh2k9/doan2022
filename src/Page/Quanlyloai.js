@@ -56,7 +56,6 @@ const Quanlyloai = () => {
                 invalid = false
                 break;
             }
-           
         }
 
         return invalid

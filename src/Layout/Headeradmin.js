@@ -4,14 +4,15 @@ import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import "../Css/header.css"
 import { Button, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem,  } from "reactstrap";
 
-const Header = () => {
+const Headeradmin = () => {
     const navigate = useNavigate()
     const [items, setItems] = useState();
- 
+    const [dangnhap, setDangnhap] = useState();
   
     useEffect(() => {
     const items = JSON.parse(localStorage.getItem('items'));
         setItems(items);
+  
      }, []);
 
     const handleClick = () => {
@@ -54,7 +55,9 @@ const Header = () => {
                 </li>
                 <li className="li-tagbar"> <Link to="/quanlymuontra" onClick={handleClick} className='link-tagbar' > Quản Lý Mượn Trả </Link>
                 </li>
-              
+                <li className="li-tagbar"> <Link to="/quanlytaikhoan" onClick={handleClick} className='link-tagbar' > Quản Lý Tài Khoản</Link>
+                </li>
+            
 
             </div>
 
@@ -63,4 +66,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Headeradmin

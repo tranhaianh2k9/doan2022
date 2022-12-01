@@ -8,7 +8,7 @@ import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import swal from 'sweetalert'
 import emailjs from "emailjs-com"
-
+import { LoginContext } from '../App';
 
 
 
@@ -16,14 +16,15 @@ const Dangnhap = () => {
 
 
   const navigate = useNavigate()
-
+  const [isLogin, setisLogin] = useState()
   const [inputEmail, setInputEmail] = useState()
   const [inputPass, setInputPass] = useState()
   const [listData, setListData] = useState()
   const [newPassword, setNewPassword] = useState()
-
   const [idDoimk, setIDDoimk] = useState()
   const [isCreated, setIsCreated] = useState(true)
+
+  const ctxlogin = useContext(LoginContext);
 
   const form = useRef();
 
@@ -45,14 +46,17 @@ const Dangnhap = () => {
 
   function checkLogin(pass, email) {
     let login = false
+
     for (let i = 0; i < listData.length; i++) {
       if (listData[i].email === email && listData[i].matkhau === pass) {
         localStorage.setItem('dangnhap', JSON.stringify({
           id: listData[i].id,
           ten: listData[i].hoten,
-          phanquyen: listData[i].phanquyen
+          phanquyen: listData[i].phanquyen,
+          matkhau: listData[i].matkhau
         }));
         login = true;
+        ctxlogin.setLogin(listData[i].phanquyen)
       }
     }
     return login
@@ -64,9 +68,8 @@ const Dangnhap = () => {
     } else if (checkLogin(inputPass, inputEmail) == false) {
       swal("Oops!", "sai Email hoặc mật khẩu!", "error")
     } else {
-      swal("Đăng Nhập Thành Công", "  ", "success");
-      navigate('/quanlysach')
-
+      swal(`Đăng Nhập Thành Công `, "  ", "success");
+      navigate('/quanlysach')  
     }
 
   }
@@ -77,7 +80,6 @@ const Dangnhap = () => {
  
   return (
     <div >
-     
       <div className='main-dangky'>
         <img className='image-background' src="https://thichchiase.com/wp-content/uploads/2016/01/87d7db3d93a94eacbaffc4680ea5c3b2-1200x675.jpg" />
       

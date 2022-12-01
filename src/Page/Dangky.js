@@ -90,7 +90,7 @@ const Dangky = () => {
                 email: inputEmail,
                 sdt: inputPhoneNum,
                 cmnd: inputCCCD,
-                phanquyen: "manager",
+                phanquyen: "Thủ Thư",
                 
             }
 

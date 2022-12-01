@@ -15,10 +15,10 @@ const index = () => {
             <img className='image-background' src="https://thichchiase.com/wp-content/uploads/2016/01/87d7db3d93a94eacbaffc4680ea5c3b2-1200x675.jpg" />
             <div className='formdangky'>
                 <h2 className='header-formdangky'>Quản Lý Thư Viện</h2>
-                <Link to='/dangky' >  <Button  color='info'>
+                <Link className='link-formindex' to='/dangky' style={{marginLeft:"30px"}} >  <Button  color='info'>
                     Đăng Ký
                 </Button> </Link> 
-              <Link to='/dangnhap' > <Button style={{marginLeft : "10px"}} color='success' >
+              <Link className='link-formindex' to='/dangnhap' > <Button style={{marginLeft : "10px"}} color='success' >
                     Đăng Nhập
                 </Button> </Link> 
                 

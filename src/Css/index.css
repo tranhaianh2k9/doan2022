@@ -182,7 +182,7 @@ body{
 .element:hover{
     background-color: rgb(138, 220, 150);
     transition: all 0.5s ease-in-out;
-    box-shadow: 5px 10px #625d5d;
+    height: 330px;
 }
 .element:hover .img-element{
     width: 230px;

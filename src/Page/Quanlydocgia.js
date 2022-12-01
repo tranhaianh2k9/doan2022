@@ -1,10 +1,10 @@
 import React from 'react'
-import { useState, useEffect, useContext } from "react";
-import { Link, useSearchParams, useNavigate } from "react-router-dom";
-import axios from "axios";
-import { Button, Form, FormGroup, Label, Input, Row } from "reactstrap";
+import { useState, useEffect, useContext } from "react"
+import { Link, useSearchParams, useNavigate } from "react-router-dom"
+import axios from "axios"
+import { Button, Form, FormGroup, Label, Input, Row } from "reactstrap"
 import swal from 'sweetalert'
-import "../Css/qldocgia.css";
+import "../Css/qldocgia.css"
 
 const Quanlydocgia = () => {
 
@@ -34,10 +34,8 @@ const Quanlydocgia = () => {
                 .get(`https://6361bcc9fabb6460d8fe204f.mockapi.io/docgia`)
                 .then((res) => {
                     const data = res.data;
-                    
                     setListDocgia(data);
                     setFirstListReader(data)
-
                    setDangmuon( data.filter((item) => item.trangthai == "Đang Mượn")) 
                    setTrehen( data.filter((item) => item.trangthai == "Trễ Hạn")) 
                    setChuaco( data.filter((item) => item.trangthai == "chưa có đơn mượn")) 
@@ -49,7 +47,7 @@ const Quanlydocgia = () => {
                 .get(`https://6361bcc9fabb6460d8fe204f.mockapi.io/docgia?search=${search}`)
                 .then((res) => {
                     const data = res.data;
-                    setListDocgia(data);
+                    setListDocgia(data)
                 });
         }
     }, [isCreated, search]);
@@ -64,7 +62,7 @@ const Quanlydocgia = () => {
         setDataInputNgaysinh("")
     }
     function ValidateEmail(mail) {
-        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{3})+$/.test(mail)) {
             return (true)
         }
         return (false)
@@ -126,7 +124,7 @@ const Quanlydocgia = () => {
                 .then(function () {
                     setIsCreate(!isCreated);
                 });
-            swal("Thêm thành công", "    ", "success");
+            swal("Thêm thành công", "    ", "success")
             clearInput()
         }
     }
@@ -192,8 +190,8 @@ const Quanlydocgia = () => {
     }
 
     const loadSach = (item) => {
-        const listProduct = firstListreader.filter((data) => data.trangthai == item);
-        setListDocgia([...listProduct]);
+        const listProduct = firstListreader.filter((data) => data.trangthai == item)
+        setListDocgia([...listProduct])
     }
     const loadlaidanhsach = () => {
         setListDocgia(firstListreader)
